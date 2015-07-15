@@ -50,7 +50,7 @@ class RPGSprite(pg.sprite.Sprite):
     def make_image(self, now):
         """Update the sprite's animation as needed."""
         if self.redraw or now-self.animate_timer > 1000/self.animate_fps:
-            self.image = self.walkframes.next()
+            self.image = next(self.walkframes)
             self.animate_timer = now
         self.redraw = False
 
