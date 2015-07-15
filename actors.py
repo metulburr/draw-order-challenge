@@ -117,8 +117,8 @@ class Player(RPGSprite):
 
 class AISprite(RPGSprite):
     """A non-player controlled sprite."""
-    def __init__(self, pos, speed, name, facing, *groups):
-        super(AISprite, self).__init__(pos, speed, name, facing, *groups)
+    def __init__(self, pos, speed, name, facing):
+        super(AISprite, self).__init__(pos, speed, name, facing)
         self.wait_range = (500, 2000)
         self.wait_delay = random.randint(*self.wait_range)
         self.wait_time = 0.0
@@ -147,3 +147,4 @@ class AISprite(RPGSprite):
             super(AISprite, self).add_direction(direction)
         self.wait_delay = random.randint(*self.wait_range)
         self.wait_time = now
+
